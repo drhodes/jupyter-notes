@@ -58,11 +58,9 @@ https://jupyterhub.readthedocs.io/en/stable/reference/urls.html
       - 
       
   [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-spawn-pending-username-servername][/hub/spawn-pending[/:username[/:servername]]]]
-  - #+begin_quote
-    This page renders the progress view for the given spawn
+  - "This page renders the progress view for the given spawn
     request. Once the server is ready, the browser is redirected to
     the running server at /user/:username/:servername/...."
-    #+end_quote
   
 - [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-token][/hub/token]]
   - for users managing their API tokens.. not sure if we'll need this.
