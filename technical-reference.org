@@ -65,12 +65,29 @@ https://jupyterhub.readthedocs.io/en/stable/reference/urls.html
 - [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-token][/hub/token]]
   - for users managing their API tokens.. not sure if we'll need this.
 - [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-admin][/hub/admin]]
-    
-
-
 
 ** Security Overview
+- It is possible to serve untrusted users.
+- notebook servers are single user
+  - users may not install new packages.
+  - DESIGN: Each user will should get their own docker instance?
+    - This will probably be covered in the kubernetes docs
+  - [[https://jupyterhub.readthedocs.io/en/stable/reference/websecurity.html#enable-subdomains][user subdomains]]
+    - username.jupyter.mydomain.com
+  - Prevent per user configuration in the /etc/jupyterhub_config.py
+    #+BEGIN_SRC python
+      Spawner.disable_user_config      
+    #+END_SRC
+  - [[https://jupyterhub.readthedocs.io/en/stable/reference/websecurity.html#isolate-packages-using-virtualenv][consider running server in virtualenv]] ?
+  - Encrypt internal connections
+  - tool for testing SSL 
+    https://www.ssllabs.com/ssltest/analyze.html
+
 ** Authenticators
+- default is PAM for local unix users.
+- !! The goal is to use LTIauthenticaor
+- 
+  
 ** Spawners
 ** Services
 ** Writing a custom Proxy implementation
