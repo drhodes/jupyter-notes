@@ -43,21 +43,21 @@ https://jupyterhub.readthedocs.io/en/stable/reference/urls.html
 - /hub/logout
   - Visiting /hub/logout clears cookies from the current browser. Note
     that logging out does not stop a user’s server(s) by default.
-- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#user-username-servername][/user/:username[/:servername]]]
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#user-username-servername][/user/:username(/:servername)]]
   - handled by the notebook server, not the hub
-- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-user-username-servername][/hub/user/:username[/:servername]]]
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-user-username-servername][/hub/user/:username(/:servername)]]
   - complicated, check page for more details.
 - /user-redirect/...
   
 - Spawning
-  [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-spawn-username-servername][/hub/spawn[/:username[/:servername]]]]
+  [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-spawn-username-servername][/hub/spawn(/:username(/:servername))]]
   - spawn default server for the current user
     - TODO !!!!!!
       - This might be a good URL to use with if there is a generic
         "goto jupyterhub" tab in the course.
       - 
       
-  [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-spawn-pending-username-servername][/hub/spawn-pending[/:username[/:servername]]]]
+  [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-spawn-pending-username-servername][/hub/spawn-pending(/:username(/:servername))]]
   - "This page renders the progress view for the given spawn
     request. Once the server is ready, the browser is redirected to
     the running server at /user/:username/:servername/...."
