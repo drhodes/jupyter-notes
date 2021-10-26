@@ -33,9 +33,10 @@
 ** JupyterHub URL scheme
 https://jupyterhub.readthedocs.io/en/stable/reference/urls.html
 
-- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub][/hub/]]
-  - 
-- /hub/home
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub][/hub/]] redirects to default page
+  - redirect to /hub/home by adjusting config:
+    ```c.JupyterHub.redirect_to_server = False```
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-home][/hub/home]] 
 - /hub/login
 - /hub/logout
 - /user/:username[/:servername]
