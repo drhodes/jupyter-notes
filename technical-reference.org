@@ -35,17 +35,39 @@ https://jupyterhub.readthedocs.io/en/stable/reference/urls.html
 
 - [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub][/hub/]] redirects to default page
   - redirect to /hub/home by adjusting config:
-    ```c.JupyterHub.redirect_to_server = False```
+    #+BEGIN_SRC python
+    c.JupyterHub.redirect_to_server = False
+    #+END_SRC
 - [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-home][/hub/home]] 
-- /hub/login
+- /hub/login - login page
 - /hub/logout
-- /user/:username[/:servername]
-- /hub/user/:username[/:servername]
+  - Visiting /hub/logout clears cookies from the current browser. Note
+    that logging out does not stop a user’s server(s) by default.
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#user-username-servername][/user/:username[/:servername]]]
+  - handled by the notebook server, not the hub
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-user-username-servername][/hub/user/:username[/:servername]]]
+  - complicated, check page for more details.
 - /user-redirect/...
   
 - Spawning
-  - /hub/token
-  - /hub/admin
+  [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-spawn-username-servername][/hub/spawn[/:username[/:servername]]]]
+  - spawn default server for the current user
+    - TODO !!!!!!
+      - This might be a good URL to use with if there is a generic
+        "goto jupyterhub" tab in the course.
+      - 
+      
+  [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-spawn-pending-username-servername][/hub/spawn-pending[/:username[/:servername]]]]
+  - #+begin_quote
+    This page renders the progress view for the given spawn
+    request. Once the server is ready, the browser is redirected to
+    the running server at /user/:username/:servername/...."
+    #+end_quote
+  
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-token][/hub/token]]
+  - for users managing their API tokens.. not sure if we'll need this.
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub-admin][/hub/admin]]
+    
 
 
 
