@@ -33,7 +33,7 @@
 ** JupyterHub URL scheme
 https://jupyterhub.readthedocs.io/en/stable/reference/urls.html
 
-- [/hub/](https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub)
+- [[https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub][/hub/]]
   - 
 - /hub/home
 - /hub/login
