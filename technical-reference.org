@@ -1,0 +1,67 @@
+* Reference
+** Technical Overview
+- Subsystems
+  - Hub:
+    - manages user accounts
+    - authentication
+  - Proxy:
+    - routes requests to the hub and single-user notebook server
+  - Single-User Notebook Server
+    - dedicated, single-user notebook server for each user. This server
+      is started by a Spawner
+      
+  - Subsystem interactions
+    - https://jupyterhub.readthedocs.io/en/stable/reference/technical-overview.html
+      - "The Hub spawns the proxy (in the default JupyterHub configuration)"
+      - "The proxy forwards all requests to the Hub by default"
+      - "The Hub handles login, and spawns single-user notebook servers on demand"
+      - "The Hub configures the proxy to forward url prefixes to single-user notebook servers"
+      
+    - authenticators control access to JupyterHub. 
+      - This is where openedx user authentication is 
+
+    - Spawners
+      - "Next, spawners control how JupyterHub starts the individual
+        notebook server for each user. The default spawner will start a
+        notebook server on the same machine running under their system
+        username. 
+
+      - The other main option is to start each server in a
+        separate container, often using Docker."
+        - THIS ^  ^  ^  ^  ^  ^  ^  ^  ^  ^  ^  ^  ^  ^  ^
+      
+** JupyterHub URL scheme
+https://jupyterhub.readthedocs.io/en/stable/reference/urls.html
+
+- [/hub/](https://jupyterhub.readthedocs.io/en/stable/reference/urls.html#hub)
+  - 
+- /hub/home
+- /hub/login
+- /hub/logout
+- /user/:username[/:servername]
+- /hub/user/:username[/:servername]
+- /user-redirect/...
+  
+- Spawning
+  - /hub/token
+  - /hub/admin
+
+
+
+** Security Overview
+** Authenticators
+** Spawners
+** Services
+** Writing a custom Proxy implementation
+** Running proxy separately from the hub
+** Using JupyterHub’s REST API
+** Monitoring
+** The Hub’s Database
+** Working with templates and UI
+** Eventlogging and Telemetry
+** Configuring user environments
+** Configuration examples
+** Configure GitHub OAuth
+** Using a reverse proxy
+** Run JupyterHub without root privileges using sudo
+** Configuration Reference

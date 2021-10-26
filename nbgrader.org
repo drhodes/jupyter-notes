@@ -1,0 +1,9 @@
+* nbgrader
+- The talk on nbgrader given at SciPy 2017:
+  - https://www.youtube.com/watch?v=5WUm0QuJdFw
+    
+- Grading in jupyter notebooks
+- https://nbgrader.readthedocs.io/en/stable/
+  - formgrader
+
+- This looks like it could be used for labs

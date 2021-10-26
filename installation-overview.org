@@ -1,0 +1,32 @@
+* Installation overview
+- Installing JupyterHub
+  - Will find config if it is located in /etc/
+    - !! remember this, the LTI authenticator may need to be imported here !!
+  - note: hub already has a proxy.
+  - configuration
+    https://jupyterhub.readthedocs.io/en/stable/getting-started/config-basics.html
+    - Or by placing the following lines in a configuration file, jupyterhub_config.py:
+      #+BEGIN_SRC python
+      c.JupyterHub.ip = '192.168.1.2'
+      c.JupyterHub.port = 443
+      c.JupyterHub.cookie_secret = bytes.fromhex('64 CHAR HEX STRING')
+      #+END_SRC
+      
+- Spawner
+  - https://jupyterhub.readthedocs.io/en/stable/getting-started/spawners-basics.html#spawners-and-single-user-notebook-servers
+  - TODO deep dive
+    - KubeSpawner
+  
+- Configure the idle culler to run as a Hub-Managed Service
+  - https://jupyterhub.readthedocs.io/en/stable/getting-started/services-basics.html#configure-the-idle-culler-to-run-as-a-hub-managed-service
+  - this is where the docker suspend feature might work to retain the
+    interpreter state of users, instead of wiping their slates
+    everytime they idle out.
+
+- How do people share notebooks?
+  - "JupyterHub has a special URL that does exactly this! It’s called /hub/user-redirect/...."
+  - https://jupyterhub.readthedocs.io/en/stable/getting-started/faq.html    
+  - JupyterHub v2+ also has a feature called "copy shareable link",
+    that should do the same.
+    
+- Supports up to 10,000 users.

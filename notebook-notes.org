@@ -1,0 +1,40 @@
+- Jupyter Notebook
+  https://jupyter-notebook.readthedocs.io/en/stable/
+  - Each notebook document has its own kernel.
+    - right, otherwise global state would be visible to each tab.
+    - Shortcuts!
+      | Basic navigation    | enter, shift-enter, up/k, down/j |
+      | Saving the notebook | s                                |
+      | Change Cell types   | y, m, 1-6, t                     |
+      | Cell creation       | a, b                             |
+      | Cell editing        | x, c, v, d, z                    |
+      | Kernel operations:  | i, 0 (press twice)               |
+
+  - Markdown Cells
+  - Notebook module loader hack:
+    https://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Importing%20Notebooks.html
+  - Jupyter notebooks use mathjax out of the box
+    https://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Typesetting%20Equations.html
+  - Show all available kernels
+    $ jupyter kernelspec list
+
+  - trouble shooting  
+    - kernel.json located in kernel specs directory
+      - contains argv stanza, includes the command to run when
+        launching the kernel.
+        - good place to check if kernel can't be found
+    - import error? Make sure user isn't shadowing module with
+      project file with same name.
+  - Asking for help with regards to
+    https://jupyter-notebook.readthedocs.io/en/latest/troubleshooting.html#asking-for-help
+  - Comms
+    - may be very handy for 
+    - https://jupyter-notebook.readthedocs.io/en/latest/comms.html#
+    - Allow custom messages between the frontend and the
+      kernel. They are used, for instance, in ipywidgets to update
+      widget state.      
+  - Notebook server.
+    - JupyterHub takes care of launching the notebook server.
+  - File Save Hooks,
+    - https://jupyter-notebook.readthedocs.io/en/latest/extending/savehooks.html
+
